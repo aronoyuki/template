@@ -3,6 +3,7 @@ package cn.aptx4869.module.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author huy
@@ -12,9 +13,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping
 public class DemoController {
-    @RequestMapping("/demo")
-    public String demo(Model model){
+    @RequestMapping("/demo.jsp")
+    public String demoJsp(Model model){
+        model.addAttribute("result", "success.jsp");
+        return "template";
+    }
+    @RequestMapping("/demo.ftl")
+    public String demoFtl(Model model){
+        model.addAttribute("result", "success.ftl");
+        return "template";
+    }
+    @RequestMapping("/demo.json")
+    @ResponseBody
+    public String demoJson(Model model){
         model.addAttribute("result", "success");
+        return "template";
+    }
+    @RequestMapping("/test")
+    public String testContentNegotiatingViewResolver(Model model){
+        model.addAttribute("result", "wtf");
         return "template";
     }
 }

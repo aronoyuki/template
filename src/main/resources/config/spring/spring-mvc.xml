@@ -1,37 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <mvc:annotation-driven />
     <!-- 当上面要访问的静态资源不存在与上面的配置中时，则根据此配置来访问 -->
     <mvc:default-servlet-handler />
     <!-- 支持上传文件 -->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="5"/>
-        <property name="defaultEncoding" value="UTF-8"/>
-    </bean>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:maxUploadSize="5"
+          p:defaultEncoding="UTF-8"/>
     <!-- 静态资源映射 -->
     <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
     <!--通用视图解析器 -->
-    <bean id="viewResolverCommon" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
         <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView" />
-        <property name="order" value="1" />
+        <property name="order" value="2" />
     </bean>
     <!--Json视图解析器 -->
-    <bean id="viewResolverJson" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+    <bean id="mappingJackson2JsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+    <!--Xml视图解析器-->
+    <bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+        <property name="streamDriver">
+            <bean class="com.thoughtworks.xstream.io.xml.StaxDriver"/>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <!--<value>com.smart.domain.User</value>-->
+            </list>
+        </property>
+    </bean>
+    <bean id="marshallingView" class="org.springframework.web.servlet.view.xml.MarshallingView"
+          p:marshaller-ref="xmlMarshaller"/>
+
 
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="order" value="0"/>
+        <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
         <property name="viewResolvers">
             <list>
-                <ref bean="viewResolverCommon"/>
+                <ref bean="freeMarkerViewResolver"/>
+                <ref bean="internalResourceViewResolver"/>
             </list>
         </property>
         <property name="defaultViews">
             <list>
-                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"></bean>
+                <ref bean="mappingJackson2JsonView"/>
             </list>
+        </property>
+    </bean>
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean"
+          p:ignoreAcceptHeader="true" p:favorPathExtension="true" p:favorParameter="true" p:parameterName="format"
+          p:defaultContentType="text/html">
+        <property name="mediaTypes">
+            <value>
+                html=text/html
+                xml=application/xml
+                json=application/json
+            </value>
         </property>
     </bean>
 

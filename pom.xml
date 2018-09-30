@@ -49,6 +49,19 @@
           <artifactId>spring-context-support</artifactId>
           <version>5.0.8.RELEASE</version>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-oxm -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-oxm</artifactId>
+          <version>5.0.8.RELEASE</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->
+      <dependency>
+          <groupId>com.thoughtworks.xstream</groupId>
+          <artifactId>xstream</artifactId>
+          <version>1.4.10</version>
+      </dependency>
+
       <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
       <dependency>
           <groupId>org.freemarker</groupId>
