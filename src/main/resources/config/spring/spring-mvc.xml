@@ -52,7 +52,10 @@
         </property>
     </bean>
     <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean"
-          p:ignoreAcceptHeader="true" p:favorPathExtension="true" p:favorParameter="true" p:parameterName="format"
+          p:ignoreAcceptHeader="true"
+          p:favorPathExtension="true"
+          p:favorParameter="true"
+          p:parameterName="format"
           p:defaultContentType="text/html">
         <property name="mediaTypes">
             <value>

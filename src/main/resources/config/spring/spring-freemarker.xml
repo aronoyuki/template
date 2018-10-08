@@ -24,7 +24,7 @@
     </bean>
     <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
     <!-- 配置freeMarker视图解析器 -->
-    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+    <bean id="freeMarkerViewResolver" class="cn.aptx4869.common.view.CustomFreemarkerViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
         <property name="contentType" value="text/html; charset=utf-8" />
         <property name="suffix" value=".ftl" />
