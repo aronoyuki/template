@@ -15,6 +15,9 @@
             <property name="remarksReporting" value="true"></property>
         </jdbcConnection>-->
 
+        <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.230:1521:oral" userId="eistrong" password="eistrong@2018">
+            <property name="remarksReporting" value="true"></property>
+        </jdbcConnection>-->
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.230:1521:oral" userId="eistrong" password="eistrong@2018">
             <property name="remarksReporting" value="true"></property>
         </jdbcConnection>
