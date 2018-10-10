@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2018/10/9 20:37:42                           */
+/* Created on:     2018/10/10 10:24:42                          */
 /*==============================================================*/
 
 
@@ -9,113 +9,103 @@
 /*==============================================================*/
 create table PERMISSION
 (
-   UUID                 VARCHAR(32) not null comment 'Ö÷¼ü',
-   CODE                 VARCHAR(50) comment '±àÂë',
-   NAME                 VARCHAR(50) comment 'Ãû×Ö',
-   RESOURCE             VARCHAR(256) comment '×ÊÔ´',
-   "DESCRIBE"           VARCHAR(256) comment 'ÃèÊö',
-   CREATE_TIME          DATE comment '´´½¨Ê±¼ä',
-   UPDATE_TIME          DATE comment '¸üĞÂÊ±¼ä',
-   DELETE_TME           DATE comment 'É¾³ıÊ±¼ä',
-   CREATOR_ID           VARCHAR(32) comment '´´½¨ÕßID',
-   UPDATER_ID           VARCHAR(32) comment '¸üĞÂÕßID',
-   DELETER_ID           VARCHAR(32) comment 'É¾³ıÕßID',
-   DELETED              tinyint comment 'ÊÇ·ñÉ¾³ı',
-   VERSION              numeric comment '°æ±¾ºÅ'
+   UUID                 VARCHAR(32) not null comment 'ä¸»é”®',
+   CODE                 VARCHAR(50) comment 'ç¼–ç ',
+   NAME                 VARCHAR(50) comment 'åå­—',
+   RESOURCE             VARCHAR(256) comment 'èµ„æº',
+   `DESCRIBE`           VARCHAR(256) comment 'æè¿°',
+   CREATE_TIME          DATE comment 'åˆ›å»ºæ—¶é—´',
+   UPDATE_TIME          DATE comment 'æ›´æ–°æ—¶é—´',
+   DELETE_TME           DATE comment 'åˆ é™¤æ—¶é—´',
+   CREATOR_ID           VARCHAR(32) comment 'åˆ›å»ºè€…ID',
+   UPDATER_ID           VARCHAR(32) comment 'æ›´æ–°è€…ID',
+   DELETER_ID           VARCHAR(32) comment 'åˆ é™¤è€…ID',
+   DELETED              tinyint comment 'æ˜¯å¦åˆ é™¤',
+   VERSION              numeric comment 'ç‰ˆæœ¬å·',
+   primary key (UUID)
 );
-
-alter table PERMISSION
-   add primary key (UUID);
 
 /*==============================================================*/
 /* Table: ROLE                                                  */
 /*==============================================================*/
 create table ROLE
 (
-   UUID                 VARCHAR(32) not null comment 'Ö÷¼ü',
-   CODE                 VARCHAR(50) comment '±àÂë',
-   NAME                 VARCHAR(50) comment 'Ãû×Ö',
-   "DESCRIBE"           VARCHAR(256) comment 'ÃèÊö',
-   CREATE_TIME          DATE comment '´´½¨Ê±¼ä',
-   UPDATE_TIME          DATE comment '¸üĞÂÊ±¼ä',
-   DELETE_TME           DATE comment 'É¾³ıÊ±¼ä',
-   CREATOR_ID           VARCHAR(32) comment '´´½¨ÕßID',
-   UPDATER_ID           VARCHAR(32) comment '¸üĞÂÕßID',
-   DELETER_ID           VARCHAR(32) comment 'É¾³ıÕßID',
-   DELETED              tinyint comment 'ÊÇ·ñÉ¾³ı',
-   VERSION              numeric comment '°æ±¾ºÅ'
+   UUID                 VARCHAR(32) not null comment 'ä¸»é”®',
+   CODE                 VARCHAR(50) comment 'ç¼–ç ',
+   NAME                 VARCHAR(50) comment 'åå­—',
+   `DESCRIBE`           VARCHAR(256) comment 'æè¿°',
+   CREATE_TIME          DATE comment 'åˆ›å»ºæ—¶é—´',
+   UPDATE_TIME          DATE comment 'æ›´æ–°æ—¶é—´',
+   DELETE_TME           DATE comment 'åˆ é™¤æ—¶é—´',
+   CREATOR_ID           VARCHAR(32) comment 'åˆ›å»ºè€…ID',
+   UPDATER_ID           VARCHAR(32) comment 'æ›´æ–°è€…ID',
+   DELETER_ID           VARCHAR(32) comment 'åˆ é™¤è€…ID',
+   DELETED              tinyint comment 'æ˜¯å¦åˆ é™¤',
+   VERSION              numeric comment 'ç‰ˆæœ¬å·',
+   primary key (UUID)
 );
-
-alter table ROLE
-   add primary key (UUID);
 
 /*==============================================================*/
 /* Table: ROLE_PERMISSION_REF                                   */
 /*==============================================================*/
 create table ROLE_PERMISSION_REF
 (
-   UUID                 VARCHAR(32) not null comment 'Ö÷¼ü',
-   ROLE_UUID            VARCHAR(32) comment '½ÇÉ«Ö÷¼ü',
-   PERMISSION_UUID      VARCHAR(32) comment 'È¨ÏŞÖ÷¼ü',
-   "DESCRIBE"           VARCHAR(256) comment 'ÃèÊö',
-   CREATE_TIME          DATE comment '´´½¨Ê±¼ä',
-   UPDATE_TIME          DATE comment '¸üĞÂÊ±¼ä',
-   DELETE_TME           DATE comment 'É¾³ıÊ±¼ä',
-   CREATOR_ID           VARCHAR(32) comment '´´½¨ÕßID',
-   UPDATER_ID           VARCHAR(32) comment '¸üĞÂÕßID',
-   DELETER_ID           VARCHAR(32) comment 'É¾³ıÕßID',
-   DELETED              tinyint comment 'ÊÇ·ñÉ¾³ı',
-   VERSION              numeric comment '°æ±¾ºÅ'
+   UUID                 VARCHAR(32) not null comment 'ä¸»é”®',
+   ROLE_UUID            VARCHAR(32) comment 'è§’è‰²ä¸»é”®',
+   PERMISSION_UUID      VARCHAR(32) comment 'æƒé™ä¸»é”®',
+   `DESCRIBE`           VARCHAR(256) comment 'æè¿°',
+   CREATE_TIME          DATE comment 'åˆ›å»ºæ—¶é—´',
+   UPDATE_TIME          DATE comment 'æ›´æ–°æ—¶é—´',
+   DELETE_TME           DATE comment 'åˆ é™¤æ—¶é—´',
+   CREATOR_ID           VARCHAR(32) comment 'åˆ›å»ºè€…ID',
+   UPDATER_ID           VARCHAR(32) comment 'æ›´æ–°è€…ID',
+   DELETER_ID           VARCHAR(32) comment 'åˆ é™¤è€…ID',
+   DELETED              tinyint comment 'æ˜¯å¦åˆ é™¤',
+   VERSION              numeric comment 'ç‰ˆæœ¬å·',
+   primary key (UUID)
 );
-
-alter table ROLE_PERMISSION_REF
-   add primary key (UUID);
 
 /*==============================================================*/
 /* Table: USER                                                  */
 /*==============================================================*/
 create table USER
 (
-   UUID                 VARCHAR(32) not null comment 'Ö÷¼ü',
-   CODE                 VARCHAR(50) comment '±àÂë',
-   NAME                 VARCHAR(50) comment 'Ãû×Ö',
-   PASSWORD             VARCHAR(256) comment 'ÃÜÂë',
-   SALT                 VARCHAR(50) comment 'ÑÎ',
-   "DESCRIBE"           char(10) comment 'ÃèÊö',
-   CREATE_TIME          DATE comment '´´½¨Ê±¼ä',
-   UPDATE_TIME          DATE comment '¸üĞÂÊ±¼ä',
-   DELETE_TME           DATE comment 'É¾³ıÊ±¼ä',
-   CREATOR_ID           VARCHAR(32) comment '´´½¨ÕßID',
-   UPDATER_ID           VARCHAR(32) comment '¸üĞÂÕßID',
-   DELETER_ID           VARCHAR(32) comment 'É¾³ıÕßID',
-   DELETED              tinyint comment 'ÊÇ·ñÉ¾³ı',
-   VERSION              numeric comment '°æ±¾ºÅ'
+   UUID                 VARCHAR(32) not null comment 'ä¸»é”®',
+   CODE                 VARCHAR(50) comment 'ç¼–ç ',
+   NAME                 VARCHAR(50) comment 'åå­—',
+   PASSWORD             VARCHAR(256) comment 'å¯†ç ',
+   SALT                 VARCHAR(50) comment 'ç›',
+   `DESCRIBE`           char(10) comment 'æè¿°',
+   CREATE_TIME          DATE comment 'åˆ›å»ºæ—¶é—´',
+   UPDATE_TIME          DATE comment 'æ›´æ–°æ—¶é—´',
+   DELETE_TME           DATE comment 'åˆ é™¤æ—¶é—´',
+   CREATOR_ID           VARCHAR(32) comment 'åˆ›å»ºè€…ID',
+   UPDATER_ID           VARCHAR(32) comment 'æ›´æ–°è€…ID',
+   DELETER_ID           VARCHAR(32) comment 'åˆ é™¤è€…ID',
+   DELETED              tinyint comment 'æ˜¯å¦åˆ é™¤',
+   VERSION              numeric comment 'ç‰ˆæœ¬å·',
+   primary key (UUID)
 );
-
-alter table USER
-   add primary key (UUID);
 
 /*==============================================================*/
 /* Table: USER_ROLE_REF                                         */
 /*==============================================================*/
 create table USER_ROLE_REF
 (
-   UUID                 VARCHAR(32) not null comment 'Ö÷¼ü',
-   USER_UUID            VARCHAR(32) comment 'ÓÃ»§Ö÷¼ü',
-   ROLE_UUID            VARCHAR(32) comment '½ÇÉ«Ö÷¼ü',
-   "DESCRIBE"           VARCHAR(256) comment 'ÃèÊö',
-   CREATE_TIME          DATE comment '´´½¨Ê±¼ä',
-   UPDATE_TIME          DATE comment '¸üĞÂÊ±¼ä',
-   DELETE_TME           DATE comment 'É¾³ıÊ±¼ä',
-   CREATOR_ID           VARCHAR(32) comment '´´½¨ÕßID',
-   UPDATER_ID           VARCHAR(32) comment '¸üĞÂÕßID',
-   DELETER_ID           VARCHAR(32) comment 'É¾³ıÕßID',
-   DELETED              tinyint comment 'ÊÇ·ñÉ¾³ı',
-   VERSION              numeric comment '°æ±¾ºÅ'
+   UUID                 VARCHAR(32) not null comment 'ä¸»é”®',
+   USER_UUID            VARCHAR(32) comment 'ç”¨æˆ·ä¸»é”®',
+   ROLE_UUID            VARCHAR(32) comment 'è§’è‰²ä¸»é”®',
+   `DESCRIBE`           VARCHAR(256) comment 'æè¿°',
+   CREATE_TIME          DATE comment 'åˆ›å»ºæ—¶é—´',
+   UPDATE_TIME          DATE comment 'æ›´æ–°æ—¶é—´',
+   DELETE_TME           DATE comment 'åˆ é™¤æ—¶é—´',
+   CREATOR_ID           VARCHAR(32) comment 'åˆ›å»ºè€…ID',
+   UPDATER_ID           VARCHAR(32) comment 'æ›´æ–°è€…ID',
+   DELETER_ID           VARCHAR(32) comment 'åˆ é™¤è€…ID',
+   DELETED              tinyint comment 'æ˜¯å¦åˆ é™¤',
+   VERSION              numeric comment 'ç‰ˆæœ¬å·',
+   primary key (UUID)
 );
-
-alter table USER_ROLE_REF
-   add primary key (UUID);
 
 alter table ROLE_PERMISSION_REF add constraint FK_P_PR_R foreign key (PERMISSION_UUID)
       references PERMISSION (UUID) on delete restrict on update restrict;
