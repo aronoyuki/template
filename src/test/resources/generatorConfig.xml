@@ -44,8 +44,11 @@
         </javaClientGenerator>
 
         <!-- 相关表的配置 -->
-        <table tableName="SHS_WT_CONT_HOU"/>
-        <table tableName="SHS_WT_CONT"/>
+        <table tableName="PERMISSION"/>
+        <table tableName="ROLE"/>
+        <table tableName="ROLE_PERMISSION_REF"/>
+        <table tableName="USER"/>
+        <table tableName="USER_ROLE_REF"/>
         <!--<table tableName="BUSINESS_SHS_CONT"/>
         <table tableName="BUSINESS_SHS_CONT_DETAIL"/>
         <table tableName="SHS_CONFIGURE"/>

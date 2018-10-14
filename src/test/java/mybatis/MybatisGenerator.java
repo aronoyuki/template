@@ -33,7 +33,7 @@ import java.util.List;
  */
 public class MybatisGenerator {
     public static void main(String[] args) throws Exception {
-        setTables();
+        //setTables();
         try {
             List<String> warnings = new ArrayList<String>();
             boolean overwrite = true;
@@ -82,7 +82,8 @@ public class MybatisGenerator {
 
         Class.forName(driverClass);
         Connection connection = DriverManager.getConnection(url, user, password);
-        String sql = "select table_name from user_tables";
+        //String sql = "select table_name from user_tables";
+        String sql = "select table_name from information_schema.tables where table_schema='shiro_demo' and table_type='base table'";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()){

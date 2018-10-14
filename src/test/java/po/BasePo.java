@@ -8,49 +8,49 @@ import java.util.Date;
  * @description 数据库公有字段
  */
 public class BasePo {
-    /**
+   /* *//**
      * 插入时间
-     */
+     *//*
     private Date sysCreateTime;
 
-    /**
+    *//**
      * 修改时间
-     */
+     *//*
     private Date sysUpdateTime;
 
-    /**
+    *//**
      * 删除时间
-     */
+     *//*
     private Date sysDeleteTime;
 
-    /**
+    *//**
      * 插入人ID
-     */
+     *//*
     private String sysCreateId;
 
-    /**
+    *//**
      * 修改人ID
-     */
+     *//*
     private String sysUpdateId;
 
-    /**
+    *//**
      * 删除人ID
-     */
+     *//*
     private String sysDeleteId;
 
-    /**
+    *//**
      * 区域
-     */
+     *//*
     private String dataSource;
 
-    /**
+    *//**
      * 是否删除
-     */
+     *//*
     private Integer isDeleted;
 
-    /**
+    *//**
      * 版本号
-     */
+     *//*
     private Integer version;
 
     public BasePo(){
@@ -130,5 +130,5 @@ public class BasePo {
 
     public void setVersion(Integer version) {
         this.version = version;
-    }
+    }*/
 }

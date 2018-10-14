@@ -1,5 +1,7 @@
 package cn.aptx4869.module.controller;
 
+import cn.aptx4869.module.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping
 public class DemoController {
+    @Autowired
+    private UserService userService;
     @RequestMapping("/demo.jsp")
     public String demoJsp(Model model){
         model.addAttribute("result", "success.jsp");
@@ -31,7 +35,7 @@ public class DemoController {
     }
     @RequestMapping("/test")
     public String testContentNegotiatingViewResolver(Model model){
-        model.addAttribute("result", "wtf");
+        model.addAttribute("users", userService.getUserList());
         return "template";
     }
 }
