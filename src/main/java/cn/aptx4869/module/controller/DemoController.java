@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author huy
@@ -17,22 +16,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class DemoController {
     @Autowired
     private UserService userService;
-    @RequestMapping("/demo.jsp")
+    @RequestMapping("/demo")
     public String demoJsp(Model model){
+        userService.insertUsers();
         model.addAttribute("result", "success.jsp");
         return "template";
     }
-    @RequestMapping("/demo.ftl")
-    public String demoFtl(Model model){
-        model.addAttribute("result", "success.ftl");
-        return "template";
-    }
-    @RequestMapping("/demo.json")
-    @ResponseBody
-    public String demoJson(Model model){
-        model.addAttribute("result", "success");
-        return "template";
-    }
+
+
     @RequestMapping("/test")
     public String testContentNegotiatingViewResolver(Model model){
         model.addAttribute("users", userService.getUserList());
