@@ -4,6 +4,7 @@ package cn.aptx4869.module.mapper;
 import cn.aptx4869.module.po.User;
 import cn.aptx4869.module.po.UserExample;
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.annotation.MapperScan;
 
@@ -24,5 +25,5 @@ public interface UserMapper {
 
     int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
-    Page<User> queryAll(int pageNum, int pageSize);
+    Page<User> queryAll(@Param("pageNum") int pageNum, @Param("pageSize") int pageSize);
 }
