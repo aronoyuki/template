@@ -1,6 +1,6 @@
 package cn.aptx4869.module.po;
 
-import cn.aptx4869.common.po.BasePo;
+import cn.aptx4869.common.entity.BasePo;
 
 import java.util.Date;
 
