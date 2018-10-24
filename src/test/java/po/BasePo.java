@@ -53,7 +53,7 @@ public class BasePo {
      *//*
     private Integer version;
 
-    public BasePo(){
+    public BaseEntity(){
         this.isDeleted = 0;
         this.sysCreateTime = new Date();
         this.sysUpdateTime = new Date();

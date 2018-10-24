@@ -1,10 +1,10 @@
 package cn.aptx4869.module.po;
 
-import cn.aptx4869.common.entity.BasePo;
+import cn.aptx4869.common.entity.BaseEntity;
 
 import java.util.Date;
 
-public class RolePermissionRef extends BasePo {
+public class RolePermissionRef extends BaseEntity {
     /**
      * 主键
      */
