@@ -298,4 +298,24 @@ public class User extends BaseEntity {
     public void setVersion(Long version) {
         this.version = version;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uuid='" + uuid + '\'' +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", describe='" + describe + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", deleteTme=" + deleteTme +
+                ", creatorId='" + creatorId + '\'' +
+                ", updaterId='" + updaterId + '\'' +
+                ", deleterId='" + deleterId + '\'' +
+                ", deleted=" + deleted +
+                ", version=" + version +
+                '}';
+    }
 }
