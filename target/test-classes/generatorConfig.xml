@@ -5,6 +5,13 @@
 <generatorConfiguration>
 
     <context id="context" targetRuntime="MyBatis3">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 自动识别数据库关键字，默认false -->
+        <property name="autoDelimitKeywords" value="true" />
+        <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错 -->
+        <property name="beginningDelimiter" value="`" />
+        <property name="endingDelimiter" value="`" />
         <commentGenerator type="mybatis.MybatisCommentGenerator">
             <property name="suppressAllComments" value="false"/>
             <property name="suppressDate" value="false"/>
@@ -49,80 +56,6 @@
         <table tableName="ROLE_PERMISSION_REF"/>
         <table tableName="USER"/>
         <table tableName="USER_ROLE_REF"/>
-        <!--<table tableName="BUSINESS_SHS_CONT"/>
-        <table tableName="BUSINESS_SHS_CONT_DETAIL"/>
-        <table tableName="SHS_CONFIGURE"/>
-        <table tableName="SHS_CONFIGURE_REL"/>
-        <table tableName="SHS_HOU"/>
-        <table tableName="PUB_QUALIFY"/>
-        <table tableName="PUB_QUALIFY_ENT"/>
-        <table tableName="PUB_QUALIFY_ENT_ATTACH"/>
-        <table tableName="PUB_QUALIFY_HOU"/>
-        <table tableName="SHS_TEMPLATE"/>
-        <table tableName="SHS_WQ_CONT"/>
-        <table tableName="SHS_WQ_CONT_ATTACH"/>
-        <table tableName="SHS_WQ_CONT_ATTACH_DETAIL"/>
-        <table tableName="SHS_WQ_CONT_ENT"/>
-        <table tableName="SHS_WQ_CONT_HOU"/>
-        <table tableName="SHS_WQ_CONT_INSTALLMENT"/>
-        <table tableName="SHS_WQ_CONT_LOAN"/>
-        <table tableName="SHS_WQ_CONT_LOAN_DETAIL"/>
-        <table tableName="SHS_WQ_CONT_SUPERVISION"/>
-        <table tableName="SHS_WQ_CONT_TEXT"/>
-        <table tableName="SHS_WT_CONT"/>
-        <table tableName="SHS_WT_CONT_ENT"/>
-        <table tableName="SHS_WT_CONT_HOU"/>
-        <table tableName="SHS_WT_CONT_HOU_ATTACH"/>
-        <table tableName="SHS_WT_CONT_TEXT"/>
-        <table tableName="shs_wt_hou_mock"/>-->
-        <!--<table tableName="ENT_PEOPLE_RB_LIST">
-            <property name="enableSelectByExample" value="false"/>
-            <property name="enableDeleteByExample" value="false"/>
-            <property name="enableCountByExample" value="false"/>
-            <property name="enableUpdateByExample" value="false"/>
-        </table>
-        <table tableName="ENT_ORG_RB_LIST">
-            <property name="enableSelectByExample" value="false"/>
-            <property name="enableDeleteByExample" value="false"/>
-            <property name="enableCountByExample" value="false"/>
-            <property name="enableUpdateByExample" value="false"/>
-        </table>
-        <table tableName="ENT_ORG_CREDIT_SCORE">
-            <property name="enableSelectByExample" value="false"/>
-            <property name="enableDeleteByExample" value="false"/>
-            <property name="enableCountByExample" value="false"/>
-            <property name="enableUpdateByExample" value="false"/>
-        </table>-->
-        <!--<table tableName="ENT_CREDIT_RECORD_LOG">
-            <property name="enableSelectByExample" value="false"/>
-            <property name="enableDeleteByExample" value="false"/>
-            <property name="enableCountByExample" value="false"/>
-            <property name="enableUpdateByExample" value="false"/>
-        </table>-->
-        <!--<table tableName="ENT_CREDIT_RECORD_RULE">
-            <property name="enableSelectByExample" value="false"/>
-            <property name="enableDeleteByExample" value="false"/>
-            <property name="enableCountByExample" value="false"/>
-            <property name="enableUpdateByExample" value="false"/>
-        </table>
-        <table tableName="CREDIT_RECORD_TYPE">
-            <property name="enableSelectByExample" value="false"/>
-            <property name="enableDeleteByExample" value="false"/>
-            <property name="enableCountByExample" value="false"/>
-            <property name="enableUpdateByExample" value="false"/>
-        </table>
-        <table tableName="BUSINESS_PERMISSON">
-            <property name="enableSelectByExample" value="false"/>
-            <property name="enableDeleteByExample" value="false"/>
-            <property name="enableCountByExample" value="false"/>
-            <property name="enableUpdateByExample" value="false"/>
-        </table>
-        <table tableName="PEOPLE_PERMISSON_REF">
-            <property name="enableSelectByExample" value="false"/>
-            <property name="enableDeleteByExample" value="false"/>
-            <property name="enableCountByExample" value="false"/>
-            <property name="enableUpdateByExample" value="false"/>
-        </table>-->
 
 </context>
 </generatorConfiguration>
