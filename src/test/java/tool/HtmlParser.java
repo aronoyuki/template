@@ -20,8 +20,8 @@ import java.io.*;
 public class HtmlParser {
 
     public static void main(String[] args) {
-        String file = "C:\\Users\\arano\\Desktop\\Temp\\33333娇.xls";
-        Element table = parseExcelToHtmlTable(file, 0, 5, 6 ,0);
+        String file = "C:\\Users\\arano\\Desktop\\工作簿1.xls";
+        Element table = parseExcelToHtmlTable(file, 0, 1, 2 ,0);
         writeElementToFile(table, "table.html");
         System.out.println(table.toString());
     }
@@ -117,7 +117,7 @@ public class HtmlParser {
      * @return
      */
     private static Element generateTr(Sheet sheet, int rowNum){
-        return generateTr(sheet,rowNum, 0, 4);
+        return generateTr(sheet,rowNum, 0, 2);
     }
 
     /**
