@@ -31,6 +31,20 @@
 
     </repositories>
   <dependencies>
+      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+          <version>3.7</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>4.0.1</version>
+          <scope>provided</scope>
+      </dependency>
+
       <!-- https://mvnrepository.com/artifact/com.oracle/ojdbc -->
       <dependency>
           <groupId>com.oracle</groupId>
@@ -87,6 +101,19 @@
           <artifactId>shiro-web</artifactId>
           <version>1.4.0</version>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-spring</artifactId>
+          <version>1.4.0</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-ehcache -->
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-ehcache</artifactId>
+          <version>1.4.0</version>
+      </dependency>
+
       <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
       <dependency>
           <groupId>org.mybatis</groupId>
@@ -169,9 +196,24 @@
           <artifactId>mapper</artifactId>
           <version>4.0.4</version>
       </dependency>
-
-
-
+      <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+      <dependency>
+          <groupId>joda-time</groupId>
+          <artifactId>joda-time</artifactId>
+          <version>2.10</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+      <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>26.0-jre</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter -->
+      <dependency>
+          <groupId>com.thetransactioncompany</groupId>
+          <artifactId>cors-filter</artifactId>
+          <version>2.6</version>
+      </dependency>
 
   </dependencies>
     <profiles>
@@ -190,6 +232,50 @@
                     <version>3.8.1</version>
                     <scope>test</scope>
                 </dependency>
+                <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+                <dependency>
+                    <groupId>org.mockito</groupId>
+                    <artifactId>mockito-core</artifactId>
+                    <version>2.21.0</version>
+                    <scope>test</scope>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/com.github.jsonzou/jmockdata -->
+                <dependency>
+                    <groupId>com.github.jsonzou</groupId>
+                    <artifactId>jmockdata</artifactId>
+                    <version>3.1.0</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
+                <dependency>
+                    <groupId>net.sourceforge.jexcelapi</groupId>
+                    <artifactId>jxl</artifactId>
+                    <version>2.6.12</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+                <dependency>
+                    <groupId>org.jsoup</groupId>
+                    <artifactId>jsoup</artifactId>
+                    <version>1.11.3</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+                <dependency>
+                    <groupId>redis.clients</groupId>
+                    <artifactId>jedis</artifactId>
+                    <version>2.9.0</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
+                <dependency>
+                    <groupId>org.springframework.data</groupId>
+                    <artifactId>spring-data-redis</artifactId>
+                    <version>2.1.2.RELEASE</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+                <dependency>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-all</artifactId>
+                    <version>4.1.32.Final</version>
+                </dependency>
+
             </dependencies>
         </profile>
         <profile>

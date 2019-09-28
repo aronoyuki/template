@@ -1,10 +1,10 @@
 package cn.aptx4869.module.po;
 
-import cn.aptx4869.common.entity.BasePo;
+import cn.aptx4869.common.entity.BaseEntity;
 
 import java.util.Date;
 
-public class User extends BasePo {
+public class User extends BaseEntity {
     /**
      * 主键
      */
@@ -297,5 +297,25 @@ public class User extends BasePo {
      */
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uuid='" + uuid + '\'' +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", describe='" + describe + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", deleteTme=" + deleteTme +
+                ", creatorId='" + creatorId + '\'' +
+                ", updaterId='" + updaterId + '\'' +
+                ", deleterId='" + deleterId + '\'' +
+                ", deleted=" + deleted +
+                ", version=" + version +
+                '}';
     }
 }

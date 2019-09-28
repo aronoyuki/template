@@ -15,13 +15,16 @@ import java.util.Calendar;
  */
 public class CaseOne {
     public static void main(String[] args) {
-        CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder().withCache("preConfigured", CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class, Object.class, ResourcePoolsBuilder.heap(100)).build()).build(true);
+       /* CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder().withCache("preConfigured", CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class, Object.class, ResourcePoolsBuilder.heap(100)).build()).build(true);
         Cache<String, Object> preConfigured = cacheManager.getCache("preConfigured", String.class, Object.class);
         Cache<String, Long> myCache = cacheManager.createCache("myCache", CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class, Long.class, ResourcePoolsBuilder.heap(100)).build());
         myCache.put("current", Calendar.getInstance().getTimeInMillis());
         preConfigured.put("cfgTest", Calendar.getInstance());
         System.out.println(myCache.get("current").toString());
         System.out.println(preConfigured.get("cfgTest").toString());
-        cacheManager.close();
+        cacheManager.close();*/
+       String path = "C:\\Users\\arano\\Documents\\Tencent Files\\23592510\\FileRecv\\key172_20_1_72.acf";
+
+
     }
 }
